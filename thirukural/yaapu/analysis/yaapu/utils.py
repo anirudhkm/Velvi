@@ -1,12 +1,12 @@
 from tamil.utf8 import nedil_letters, uyir_mei_nedil, kuril_letters, uyir_mei_kuril, mei_letters, aytham_letter
 
 
-def split_kural(val):
+def split_seyyul(val, sep="\n"):
     
-    val = val.replace(".", "").split("\n")
-    val[0] = val[0].strip().split(" ")
-    val[1] = val[1].strip().split(" ")
-    return val   
+    val = val.replace(".", "").split(sep)
+    for i in range(len(val)):
+        val[i] = val[i].strip().split(" ")
+    return val
 
 def is_nedil(char):
 
